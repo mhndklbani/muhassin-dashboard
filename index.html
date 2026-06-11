@@ -32,7 +32,7 @@
 
   /* ── App bar ── */
   .appbar{background:var(--navy);color:#fff;display:flex;align-items:center;gap:14px;
-    padding:0 22px;height:64px;box-shadow:0 2px 14px rgba(15,30,48,.25);position:sticky;top:0;z-index:50}
+    padding:0 22px;height:56px;box-shadow:0 2px 14px rgba(15,30,48,.25);position:sticky;top:0;z-index:50}
   .logo{display:flex;align-items:center;gap:10px}
   .logo img{height:40px;background:#fff;border-radius:9px;padding:3px 6px}
   .logo-name{font-weight:800;font-size:17px;letter-spacing:.6px}
@@ -67,28 +67,28 @@
     font-family:var(--mono);font-weight:800;font-size:13px;letter-spacing:1px;padding:11px 26px;cursor:pointer}
   .st-card button:hover{filter:brightness(1.08)}
 
-  .page{display:none;max-width:1200px;margin:0 auto;padding:20px 22px 44px;animation:fadein .35s ease}
+  .page{display:none;max-width:1200px;margin:0 auto;padding:14px 18px 30px;animation:fadein .35s ease}
   .page.show{display:block}
   @keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
   .card{background:var(--panel);border:1.5px solid var(--border);border-radius:14px;
-    padding:18px 20px;box-shadow:0 3px 14px rgba(15,30,48,.06)}
+    padding:14px 16px;box-shadow:0 3px 14px rgba(15,30,48,.06)}
   .card h3{font-family:var(--mono);font-size:11.5px;letter-spacing:1.6px;color:var(--muted);
     font-weight:700;margin-bottom:3px;text-transform:uppercase}
   .card .sub{font-size:11px;color:var(--muted);font-family:var(--mono)}
   canvas.chart{width:100%;display:block}
-  .hero{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:14px}
+  .hero{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:12px}
   .saved-card{background:linear-gradient(135deg,#13294b,#1d4d3a);color:#fff;border:0;position:relative;overflow:hidden}
   .saved-card h3{color:#9fd4b4}
-  .saved-val{font-family:var(--mono);font-size:40px;font-weight:800;color:#5fe89f;
+  .saved-val{font-family:var(--mono);font-size:34px;font-weight:800;color:#5fe89f;
     letter-spacing:1px;margin:4px 0 2px;text-shadow:0 0 24px rgba(95,232,159,.35)}
   .saved-sub{font-size:11.5px;color:#bcd6c8;font-family:var(--mono)}
   .pulse-ring{position:absolute;right:-30px;top:-30px;width:150px;height:150px;border-radius:50%;
     border:2px solid rgba(95,232,159,.25);animation:ring 3s infinite}
   @keyframes ring{0%{transform:scale(.7);opacity:.8}100%{transform:scale(1.25);opacity:0}}
-  .kpi-val{font-family:var(--mono);font-size:27px;font-weight:800;margin:5px 0 2px}
+  .kpi-val{font-family:var(--mono);font-size:24px;font-weight:800;margin:5px 0 2px}
   .delta{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:700;border-radius:6px;padding:2px 8px;margin-top:5px}
   .delta.down{background:var(--goodbg);color:var(--good)}
-  .row2{display:grid;grid-template-columns:1.5fr 1fr;gap:14px;margin-top:14px}
+  .row2{display:grid;grid-template-columns:1.5fr 1fr;gap:12px;margin-top:12px}
   .legend{display:flex;gap:16px;margin-top:8px;flex-wrap:wrap}
   .li{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;color:var(--muted);font-weight:600}
   .sw{width:20px;height:8px;border-radius:4px}
@@ -111,7 +111,7 @@
   .gaugewrap{display:flex;align-items:center;gap:18px;margin-top:16px}
   .drums{font-family:var(--mono);font-size:12px;color:var(--ink);line-height:2}
   .drums b{color:var(--good)}
-  footer{max-width:1200px;margin:8px auto 26px;text-align:center;color:#8a99ad;
+  footer{max-width:1200px;margin:4px auto 14px;text-align:center;color:#8a99ad;
     font-family:var(--mono);font-size:10px;letter-spacing:1.2px}
   @media(max-width:980px){.hero,.row2,.adv{grid-template-columns:1fr}.tabs{margin-left:4px}
     .logo-sub,.pdo-bar,.station{display:none}}
@@ -192,7 +192,7 @@
     <div class="card">
       <h3>Injection rate — actual vs optimized (L/d)</h3>
       <div class="sub">last 60 days · shaded band = saved chemical</div>
-      <canvas class="chart" id="ch-inj" height="190" style="height:190px"></canvas>
+      <canvas class="chart" id="ch-inj" height="170" style="height:170px"></canvas>
       <div class="legend">
         <div class="li"><div class="sw" style="background:#6d28d9"></div>Actual</div>
         <div class="li"><div class="sw" style="background:#1d9e55"></div>Muhassin optimized</div>
@@ -202,7 +202,7 @@
     <div class="card">
       <h3>Cumulative savings (USD)</h3>
       <div class="sub">running total since deployment</div>
-      <canvas class="chart" id="ch-cum" height="190" style="height:190px"></canvas>
+      <canvas class="chart" id="ch-cum" height="170" style="height:170px"></canvas>
     </div>
   </div>
 </div>
@@ -382,7 +382,7 @@ function xlabels(x,W,H,p,pb,labels,every){
   const n=labels.length,ax=H-pb;
   x.strokeStyle="#9fb0c2";x.lineWidth=1.2;
   x.beginPath();x.moveTo(p,ax);x.lineTo(W-p,ax);x.stroke();
-  x.fillStyle="#33465c";x.font="700 11px Consolas,monospace";x.textAlign="center";x.textBaseline="top";
+  x.fillStyle="#1f334a";x.font="800 12px Consolas,monospace";x.textAlign="center";x.textBaseline="top";
   const idx=[];for(let i=0;i<n;i+=every)idx.push(i);if(idx[idx.length-1]!==n-1)idx.push(n-1);
   idx.forEach(i=>{const X=p+(W-2*p)*i/(n-1);
     x.beginPath();x.strokeStyle="#9fb0c2";x.moveTo(X,ax);x.lineTo(X,ax+5);x.stroke();
@@ -396,30 +396,30 @@ function line(x,W,H,p,pb,data,min,max,col,w,fillTo){
     x.closePath();x.fillStyle=col;x.fill();return;}
   x.strokeStyle=col;x.lineWidth=w||2;x.lineJoin="round";x.stroke();}
 
-function drawInj(){const [x,W,H]=setupCv("ch-inj"),p=26,pb=36;axes(x,W,H,p,pb);
+function drawInj(){const [x,W,H]=setupCv("ch-inj"),p=26,pb=54;axes(x,W,H,p,pb);
   const all=[...hist.act,...hist.opt],mn=Math.min(...all)*.95,mx=Math.max(...all)*1.05;
   line(x,W,H,p,pb,hist.act,mn,mx,"rgba(95,200,140,.30)",0,hist.opt);
   line(x,W,H,p,pb,hist.act,mn,mx,"#6d28d9",2.2);
   line(x,W,H,p,pb,hist.opt,mn,mx,"#1d9e55",2.2);
   xlabels(x,W,H,p,pb,hist.days,12);}
-function drawCum(){const [x,W,H]=setupCv("ch-cum"),p=26,pb=36;axes(x,W,H,p,pb);
+function drawCum(){const [x,W,H]=setupCv("ch-cum"),p=26,pb=54;axes(x,W,H,p,pb);
   const mn=hist.cum[0]*.98,mx=hist.cum[59]*1.02;
   line(x,W,H,p,pb,hist.cum,mn,mx,"rgba(95,200,140,.35)",0,hist.cum.map(()=>mn));
   line(x,W,H,p,pb,hist.cum,mn,mx,"#1d9e55",2.4);
   x.fillStyle="#1d9e55";x.font="700 11px Consolas,monospace";x.textAlign="right";
   x.fillText("$"+Math.round(hist.cum[59]/1000)+"K",W-p,p+12);
   xlabels(x,W,H,p,pb,hist.days,12);}
-function drawSeason(){const [x,W,H]=setupCv("ch-season"),p=28,pb=36,mx=7,bw=(W-2*p)/12*.32;
+function drawSeason(){const [x,W,H]=setupCv("ch-season"),p=28,pb=54,mx=7,bw=(W-2*p)/12*.32;
   axes(x,W,H,p,pb);
   MONTHS.forEach((m,i)=>{const cx=p+(W-2*p)*(i+.5)/12;
     const yA=H-pb-(H-p-pb)*seasAct[i]/mx,yO=H-pb-(H-p-pb)*seasOpt[i]/mx;
     x.fillStyle="#6d28d9";x.fillRect(cx-bw-1,yA,bw,H-pb-yA);
     x.fillStyle="#1d9e55";x.fillRect(cx+1,yO,bw,H-pb-yO);
-    x.fillStyle="#33465c";x.font="700 11px Consolas,monospace";x.textAlign="center";x.textBaseline="top";
+    x.fillStyle="#1f334a";x.font="800 12px Consolas,monospace";x.textAlign="center";x.textBaseline="top";
     x.fillText(m,cx,H-pb+8);x.textBaseline="alphabetic";});
   x.strokeStyle="#9fb0c2";x.lineWidth=1.2;
   x.beginPath();x.moveTo(p,H-pb);x.lineTo(W-p,H-pb);x.stroke();}
-function drawTemp(){const [x,W,H]=setupCv("ch-temp"),p=28,pb=36;axes(x,W,H,p,pb);
+function drawTemp(){const [x,W,H]=setupCv("ch-temp"),p=28,pb=54;axes(x,W,H,p,pb);
   line(x,W,H,p,pb,tempProf,40,52,"#e09a1e",2.4);
   x.strokeStyle="#9fb0c2";x.lineWidth=1.2;
   x.beginPath();x.moveTo(p,H-pb);x.lineTo(W-p,H-pb);x.stroke();
@@ -428,7 +428,7 @@ function drawTemp(){const [x,W,H]=setupCv("ch-temp"),p=28,pb=36;axes(x,W,H,p,pb)
     const X=p+(W-2*p)*i/7;
     x.beginPath();x.moveTo(X,H-pb);x.lineTo(X,H-pb+5);x.stroke();
     x.fillText(l,X,H-pb+8);});x.textBaseline="alphabetic";}
-function drawBsw(){const [x,W,H]=setupCv("ch-bsw"),p=26,pb=36;axes(x,W,H,p,pb);
+function drawBsw(){const [x,W,H]=setupCv("ch-bsw"),p=26,pb=54;axes(x,W,H,p,pb);
   line(x,W,H,p,pb,hist.bsw,0.1,0.7,"#1a9bb5",2);
   const y=H-pb-(H-p-pb)*(0.6-0.1)/(0.7-0.1);
   x.setLineDash([6,4]);x.strokeStyle="#e02430";x.lineWidth=1.6;
@@ -436,7 +436,7 @@ function drawBsw(){const [x,W,H]=setupCv("ch-bsw"),p=26,pb=36;axes(x,W,H,p,pb);
   x.fillStyle="#e02430";x.font="700 10px Consolas,monospace";x.textAlign="left";
   x.fillText("0.6% SPEC",p+4,y-6);
   xlabels(x,W,H,p,pb,hist.bswDays,18);}
-function drawResp(){const [x,W,H]=setupCv("ch-resp"),p=26,pb=36;axes(x,W,H,p,pb);
+function drawResp(){const [x,W,H]=setupCv("ch-resp"),p=26,pb=54;axes(x,W,H,p,pb);
   const dose=[],bsw=[];for(let d=2.5;d<=8;d+=.25){dose.push(d);bsw.push(.30+.22*Math.exp(-(d-2.5)/1.1));}
   line(x,W,H,p,pb,bsw,0.25,0.7,"#1d9e55",2.4);
   const y=H-pb-(H-p-pb)*(0.6-0.25)/(0.7-0.25);
